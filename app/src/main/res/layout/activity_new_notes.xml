@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".NewNotesActivity">
+
+    <LinearLayout
+        android:id="@+id/linearActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="9dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="@string/text_CrearNota"
+            android:textColor="@color/colorGris"
+            android:textSize="@dimen/textTitle20" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/marginTop"
+        android:layout_marginRight="@dimen/marginTop"
+        app:layout_constraintTop_toBottomOf="@+id/linearActionBar">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/marginTop"
+            android:paddingRight="10dp"
+            app:hintEnabled="true"
+            android:background="@drawable/bordertext"
+            app:layout_constraintTop_toBottomOf="@+id/linearActionBar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleNote"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:hint="@string/text_Titulo"
+                android:background="@android:color/transparent"
+                android:maxLength="28"
+                android:textColor="@color/colorGris"
+                android:paddingLeft="12dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="@dimen/marginTop"
+            android:background="@drawable/bordertext"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="7dp"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:id="@+id/imgClean"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="right|left"
+                    android:src="@drawable/limpiar"/>
+
+                <ImageView
+                    android:id="@+id/imgPhoto"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="right|left"
+                    android:src="@drawable/ic_photos"/>
+
+                <ImageView
+                    android:id="@+id/imgVoice"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="right|left"
+                    android:onClick="hablar"
+                    android:src="@drawable/ic_settings_voice_black_24dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="@dimen/marginTop"
+                android:layout_marginRight="@dimen/marginTop"/>
+
+            <EditText
+                android:id="@+id/textContentNote"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:layout_gravity="end"
+                android:gravity="end|left"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGris"
+                android:hint="@string/text_Contenido"
+                android:background="@android:color/transparent"
+                android:inputType="textCapSentences|textMultiLine"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonNote"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="@string/text_Crear"
+        android:textColor="@color/colorBlanco"
+        android:background="@drawable/borderbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearContent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
